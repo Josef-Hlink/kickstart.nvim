@@ -1,4 +1,5 @@
 -- lua/custom/plugins.lua
+---@diagnostic disable: missing-fields
 
 return {
   -- vim-be-good
@@ -10,10 +11,7 @@ return {
   {
     'numToStr/Comment.nvim',
     config = function()
-      require('Comment').setup {
-        padding = true,
-        sticky = true,
-      }
+      require('Comment').setup {}
     end,
   },
 }
