@@ -21,3 +21,6 @@ vim.api.nvim_create_autocmd('BufWritePost', {
     end
   end,
 })
+
+-- actually go to definition
+vim.keymap.set('n', '<leader>gd', '<cmd>Telescope lsp_definitions<CR>', { desc = 'Fuzzy go-to-definition' })
