@@ -34,4 +34,27 @@ return {
       }
     end,
   },
+  -- context
+  {
+    'nvim-treesitter/nvim-treesitter-context',
+    event = 'BufReadPost',
+    config = function()
+      require('treesitter-context').setup {
+        enable = true,
+        max_lines = 3, -- how many context lines to show
+        trim_scope = 'outer', -- can be "inner", "outer"
+        mode = 'cursor', -- or "topline"
+      }
+    end,
+  },
+  -- colorizer
+  {
+    'norcalli/nvim-colorizer.lua',
+    event = 'BufReadPre',
+    config = function()
+      require('colorizer').setup {
+        '*', -- enable for all filetypes by default
+      }
+    end,
+  },
 }
