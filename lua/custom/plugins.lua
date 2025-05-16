@@ -34,6 +34,40 @@ return {
       }
     end,
   },
+  -- treesitter
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+    event = { 'BufReadPost', 'BufNewFile' },
+    config = function()
+      require('nvim-treesitter.configs').setup {
+        ensure_installed = { 'python', 'lua', 'bash', 'javascript', 'json', 'yaml' },
+        highlight = { enable = true },
+        indent = { enable = true },
+      }
+    end,
+  },
+  -- textobjects
+  {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    dependencies = 'nvim-treesitter/nvim-treesitter',
+    config = function()
+      require('nvim-treesitter.configs').setup {
+        textobjects = {
+          select = {
+            enable = true,
+            lookahead = true,
+            keymaps = {
+              ['af'] = '@function.outer',
+              ['if'] = '@function.inner',
+              ['ac'] = '@class.outer',
+              ['ic'] = '@class.inner',
+            },
+          },
+        },
+      }
+    end,
+  },
   -- context
   {
     'nvim-treesitter/nvim-treesitter-context',
@@ -57,6 +91,7 @@ return {
       }
     end,
   },
+  -- startup screen
   {
     'goolord/alpha-nvim',
     config = function()
