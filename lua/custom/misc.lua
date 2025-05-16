@@ -24,3 +24,13 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 
 -- actually go to definition
 vim.keymap.set('n', '<leader>gd', '<cmd>Telescope lsp_definitions<CR>', { desc = 'Fuzzy go-to-definition' })
+
+-- open telescope on startup
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = function()
+    -- Only trigger if no files were passed to nvim
+    if vim.fn.argc() == 0 then
+      vim.cmd 'Telescope find_files'
+    end
+  end,
+})
