@@ -34,3 +34,6 @@ vim.api.nvim_create_autocmd('VimEnter', {
     end
   end,
 })
+
+-- browser for markdown previes
+vim.g.mkdp_browser = 'firefox'
