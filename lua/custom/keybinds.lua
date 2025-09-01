@@ -10,3 +10,6 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz', { noremap = true, silent = true })
 
 -- Write with leader w
 vim.keymap.set('n', '<leader>w', ':w<CR>', { noremap = true, silent = true })
+
+-- actually go to definition
+vim.keymap.set('n', '<leader>gd', '<cmd>Telescope lsp_definitions<CR>', { desc = 'Fuzzy go-to-definition' })

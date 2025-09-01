@@ -22,9 +22,6 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   end,
 })
 
--- actually go to definition
-vim.keymap.set('n', '<leader>gd', '<cmd>Telescope lsp_definitions<CR>', { desc = 'Fuzzy go-to-definition' })
-
 -- open telescope on startup
 vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()
