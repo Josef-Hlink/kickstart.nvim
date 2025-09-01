@@ -8,8 +8,9 @@ vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { noremap = true, silent = true })
 
--- Write with leader w
+-- Write/quit with leader w/q
 vim.keymap.set('n', '<leader>w', ':w<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>q', ':q<CR>', { noremap = true, silent = true })
 
 -- actually go to definition
 vim.keymap.set('n', '<leader>gd', '<cmd>Telescope lsp_definitions<CR>', { desc = 'Fuzzy go-to-definition' })
