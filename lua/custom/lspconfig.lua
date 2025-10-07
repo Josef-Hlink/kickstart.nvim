@@ -2,3 +2,9 @@
 
 -- Enable Python LSP
 vim.lsp.enable 'pyright'
+
+-- Typescript
+vim.lsp.enable 'ts_ls'
+
+-- Svelte
+vim.lsp.enable 'svelte'
