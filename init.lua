@@ -1005,6 +1005,9 @@ require('lazy').setup({
   },
 })
 
+-- soft tab settings
+vim.opt.tabstop = 4
+
 -- From here we load all our own stuff
 require 'custom'
 
