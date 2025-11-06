@@ -8,3 +8,6 @@ vim.lsp.enable 'ts_ls'
 
 -- Svelte
 vim.lsp.enable 'svelte'
+
+-- Go
+vim.lsp.enable 'gopls'
