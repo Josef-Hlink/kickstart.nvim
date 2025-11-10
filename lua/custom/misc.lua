@@ -83,4 +83,4 @@ end, { desc = 'Open harpoon window' })
 
 vim.keymap.set('n', '<leader>r', function()
   harpoon.ui:toggle_quick_menu(harpoon:list())
-end)
+end, { desc = 'Toggle harpoon quick menu' })
