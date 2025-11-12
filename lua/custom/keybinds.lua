@@ -16,3 +16,8 @@ vim.keymap.set('n', '<leader>q', ':q<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>gd', '<cmd>Telescope lsp_definitions<CR>', { desc = 'lsp definition' })
 -- go to references
 vim.keymap.set('n', '<leader>gr', '<cmd>Telescope lsp_references<CR>', { desc = 'lsp references' })
+
+-- open diagnostic float
+vim.keymap.set('n', '<leader>c', function()
+  vim.diagnostic.open_float()
+end, { desc = 'open diagnostic float' })
