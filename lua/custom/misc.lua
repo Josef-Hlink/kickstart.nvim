@@ -22,16 +22,6 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   end,
 })
 
--- open telescope on startup
-vim.api.nvim_create_autocmd('VimEnter', {
-  callback = function()
-    -- Only trigger if no files were passed to nvim
-    if vim.fn.argc() == 0 then
-      vim.cmd 'Telescope find_files'
-    end
-  end,
-})
-
 -- browser for markdown previes
 vim.g.mkdp_browser = 'firefox'
 
@@ -84,3 +74,19 @@ end, { desc = 'Open harpoon window' })
 vim.keymap.set('n', '<leader>r', function()
   harpoon.ui:toggle_quick_menu(harpoon:list())
 end, { desc = 'Toggle harpoon quick menu' })
+
+-- open telescope on startup
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = function()
+    -- Only trigger if no files were passed to nvim
+    if vim.fn.argc() ~= 0 then
+      return
+    end
+    local harpoon_list = harpoon:list()
+    if #harpoon_list.items > 0 then
+      toggle_telescope(harpoon_list)
+    else
+      vim.cmd 'Telescope find_files'
+    end
+  end,
+})
