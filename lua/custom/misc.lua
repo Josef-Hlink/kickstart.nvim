@@ -6,6 +6,8 @@ vim.api.nvim_set_hl(0, 'ColorColumn', {
   bg = vim.api.nvim_get_hl(0, { name = 'CursorLine', link = false }).bg, -- test
 })
 
+vim.o.winborder = 'rounded'
+
 -- python format on write (ruff)
 vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = '*.py',
