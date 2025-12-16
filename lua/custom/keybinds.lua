@@ -28,3 +28,13 @@ vim.keymap.set('n', '<leader>gr', '<cmd>Telescope lsp_references<CR>', { desc = 
 vim.keymap.set('n', '<leader>c', function()
   vim.diagnostic.open_float()
 end, { desc = 'open diagnostic float' })
+
+-- toggle virtual lines
+vim.keymap.set('n', '<leader>tl', function()
+  local cfg = vim.diagnostic.config()
+  local lines_currently_enabled = cfg ~= nil and cfg.virtual_lines == true
+  vim.diagnostic.config {
+    virtual_lines = not lines_currently_enabled,
+    virtual_text = lines_currently_enabled,
+  }
+end, { desc = 'toggle virtual diagnostic lines' })
