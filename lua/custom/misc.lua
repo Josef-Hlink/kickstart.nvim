@@ -92,3 +92,14 @@ vim.api.nvim_create_autocmd('VimEnter', {
     end
   end,
 })
+
+-- syntax for applescript files
+vim.filetype.add {
+  extension = {
+    applescript = 'applescript',
+    scpt = 'applescript',
+  },
+  pattern = {
+    ['%.applescript$'] = 'applescript',
+  },
+}
