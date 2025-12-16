@@ -8,6 +8,9 @@ vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { noremap = true, silent = true })
 vim.keymap.set('n', 'gh', '^', { noremap = true, silent = true })
 vim.keymap.set('n', 'gl', '$', { noremap = true, silent = true })
 
+-- Don't yank on x (use blackhole register)
+vim.keymap.set('n', 'x', '"_x', { noremap = true, silent = true })
+
 -- Center window when moving with ctrl u/d
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { noremap = true, silent = true })
